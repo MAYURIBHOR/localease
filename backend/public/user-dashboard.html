@@ -3,87 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <title>User Dashboard | LocalEase</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="dashboard.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="dashboard-nav">
-  <div class="nav-logo">LocalEase</div>
-  <div class="nav-links">
-    <a href="#">Dashboard</a>
-    <a href="#">My Requests</a>
-    <a href="#">Profile</a>
-    <a href="login.html">Logout</a>
-  </div>
-</nav>
+<!-- TOP NAVBAR -->
+<header class="topbar">
+  <div class="logo">LocalEase</div>
+  <nav>
+    <a class="active">Dashboard</a>
+    <a>My Requests</a>
+    <a>Profile</a>
+    <a class="logout">Logout</a>
+  </nav>
+</header>
 
-<!-- DASHBOARD -->
-<section class="dashboard">
-  <h1>Welcome, User 👋</h1>
-  <p class="subtitle">Find trusted local services near you</p>
+<!-- MAIN -->
+<main class="dashboard">
 
-  <div class="card-container">
+  <!-- LEFT SECTION -->
+  <section class="main-area">
 
-    <!-- SEARCH -->
-    <div class="dash-card">
-      <i class="fas fa-magnifying-glass"></i>
-      <h3>Search Services</h3>
-      <p>Find plumbers, electricians & more nearby</p>
+    <!-- WELCOME -->
+    <div class="welcome">
+      <h1>Welcome back, <span>Anifayudh</span></h1>
+      <p>Manage your services and payments easily</p>
     </div>
 
-    <!-- DIRECT CONTACT -->
-    <div class="dash-card">
-      <i class="fas fa-phone"></i>
-      <h3>Direct Contact</h3>
-      <p>Call providers directly without commission</p>
+    <!-- STATUS STRIP -->
+    <div class="status-strip">
+      <div>
+        <h3>12</h3>
+        <span>Total Requests</span>
+      </div>
+      <div>
+        <h3>4</h3>
+        <span>Active Services</span>
+      </div>
+      <div>
+        <h3>₹1,200</h3>
+        <span>Pending Payment</span>
+      </div>
     </div>
 
-    <!-- RATE -->
-    <div class="dash-card">
-      <i class="fas fa-star"></i>
-      <h3>Rate Services</h3>
-      <p>Give feedback after service completion</p>
+    <!-- ACTION GRID -->
+    <div class="action-grid">
+      <div class="action search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <h4>Search Services</h4>
+        <p>Find nearby professionals</p>
+      </div>
+
+      <div class="action contact">
+        <i class="fa-solid fa-phone"></i>
+        <h4>Direct Contact</h4>
+        <p>Call or chat instantly</p>
+      </div>
+
+      <div class="action wallet">
+        <i class="fa-solid fa-wallet"></i>
+        <h4>Payments & Wallet</h4>
+        <p>Manage transactions</p>
+      </div>
+
+      <div class="action saved">
+        <i class="fa-solid fa-bookmark"></i>
+        <h4>Saved Providers</h4>
+        <p>Your favourites</p>
+      </div>
     </div>
 
-    <!-- FILTER & SORT -->
-    <div class="dash-card">
-      <i class="fas fa-filter"></i>
-      <h3>Filter Providers</h3>
-      <p>Sort by rating, price & experience</p>
-    </div>
+  </section>
 
-    <!-- SAVED PROVIDERS -->
-    <div class="dash-card">
-      <i class="fas fa-heart"></i>
-      <h3>Saved Providers</h3>
-      <p>Quick access to your trusted professionals</p>
-    </div>
+  <!-- RIGHT PROFILE -->
+  <aside class="profile-panel">
+    <img src="https://i.pravatar.cc/150?img=12" alt="User">
+    <h3>Anifayudh</h3>
+    <span class="verified">
+      <i class="fa-solid fa-circle-check"></i> Verified
+    </span>
+    <button>View Profile</button>
+  </aside>
 
-    <!-- SERVICE HISTORY -->
-    <div class="dash-card">
-      <i class="fas fa-clock-rotate-left"></i>
-      <h3>Service History</h3>
-      <p>View previously contacted services</p>
-    </div>
-
-    <!-- REPORT PROVIDER -->
-    <div class="dash-card">
-      <i class="fas fa-flag"></i>
-      <h3>Report Provider</h3>
-      <p>Flag low-rated or suspicious services</p>
-    </div>
-
-    <!-- LOCATION INFO -->
-    <div class="dash-card">
-      <i class="fas fa-location-dot"></i>
-      <h3>Location Radius</h3>
-      <p>Searching services within 5 km</p>
-    </div>
-
-  </div>
-</section>
+</main>
 
 </body>
 </html>

@@ -306,7 +306,7 @@ nav {
   font-size: 28px;
   font-weight: bold;
   background: linear-gradient(90deg, #1fa2c7, #1c8db3, #20c997);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: floatTitle 3s ease-in-out infinite;
   text-shadow: 0 4px 10px rgba(0,0,0,0.2);
@@ -324,7 +324,7 @@ nav {
   font-weight: 700;
   background: linear-gradient(90deg, #1fa2c7, #20c997, #1c8db3, #ffb347);
   background-size: 300% 100%;
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradientAnimation 4s ease infinite, floatTitle 3s ease-in-out infinite;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.1);
@@ -348,7 +348,7 @@ nav {
   font-weight: 800;
   background: linear-gradient(90deg, #ffb347, #1fa2c7, #20c997, #1c8db3);
   background-size: 300% 100%;
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradientAnimation 6s ease infinite, floatTitle 4s ease-in-out infinite;
   text-align: center;
@@ -384,7 +384,7 @@ nav {
   color: white; /* fallback */
   background: linear-gradient(90deg, #ffeb3b, #ff7f50, #20c997, #1fa2c7);
   background-size: 300% 100%;
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 1px 1px 6px rgba(0,0,0,0.25), 0 0 10px rgba(255,255,255,0.2); /* makes it pop */
   animation: gradientAnimation 6s ease infinite, floatTitle 4s ease-in-out infinite;

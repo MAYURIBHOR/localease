@@ -417,7 +417,7 @@ nav {
   font-weight: 700;
   background: linear-gradient(90deg, #1fa2c7, #20c997, #1c8db3, #ffb347);
   background-size: 300% 100%;
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradientAnimation 4s ease infinite, floatTitle 3s ease-in-out infinite;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.1);
@@ -442,7 +442,7 @@ nav {
   color: #fff; /* fallback */
   background: linear-gradient(90deg, #ff7f50, #ffeb3b, #1fa2c7, #20c997);
   background-size: 300% 100%;
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 1px 1px 6px rgba(0,0,0,0.25), 0 0 12px rgba(255,255,255,0.2);
   animation: gradientAnimation 6s ease infinite, floatTitle 4s ease-in-out infinite;
@@ -472,7 +472,7 @@ nav {
   color: #ffffff; /* fallback */
   background: linear-gradient(90deg, #ff8c42, #ffd700, #1fa2c7, #20c997);
   background-size: 300% 100%;
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 1px 1px 6px rgba(0,0,0,0.25), 0 0 10px rgba(255,255,255,0.2);
   animation: gradientAnimation 6s ease infinite, floatTitle 4s ease-in-out infinite;

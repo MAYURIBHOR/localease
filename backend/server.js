@@ -1,34 +1,27 @@
-require('dotenv').config();
-const express = require('express');
-const path = require('path');
-const cors = require('cors');
+require("dotenv").config();
+const express = require("express");
+const path = require("path");
+const cors = require("cors");
+
 const app = express();
 
-const userRoutes = require('./routes/userRoutes');
-const serviceRoutes = require('./routes/serviceRoutes');
-const bookingRoutes = require('./routes/bookingRoutes');
-
-// Middleware
-app.use(express.json());
+/* ===== MIDDLEWARE ===== */
 app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// ✅ Serve static files from public folder
-app.use(express.static(path.join(__dirname, 'public')));
+/* ===== FRONTEND ===== */
+app.use(express.static(path.join(__dirname, "public")));
 
-// API Routes
-app.use('/users', userRoutes);
-app.use('/services', serviceRoutes);
-app.use('/bookings', bookingRoutes);
+/* ===== ROUTES ===== */
+app.use("/users", require("./routes/userRoutes"));
 
-app.get('/api', (req, res) => {
-  res.send('Backend API running successfully');
+/* ===== TEST ===== */
+app.get("/", (req, res) => {
+  res.send("LocalEase Server Running 🚀");
 });
 
-// ✅ Serve index.html for all non-API routes (SPA support)
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
+/* ===== SERVER ===== */
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`✅ Server running on http://localhost:${PORT}`);
