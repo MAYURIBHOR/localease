@@ -2,14 +2,22 @@ require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
+<<<<<<< HEAD
 const db = require("./config/db"); 
 
 const app = express();
 
+=======
+
+const app = express();
+
+/* ===== MIDDLEWARE ===== */
+>>>>>>> e6de81cf82702511476c6e5d140007ddf1cf3752
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+<<<<<<< HEAD
 // This serves your CSS, Images, and JS files from the public folder
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -34,4 +42,21 @@ app.get("/api/admin/providers", (req, res) => {
 const PORT = 5000;
 app.listen(PORT, () => {
     console.log(`✅ LocalEase Server: http://localhost:${PORT}`);
+=======
+/* ===== FRONTEND ===== */
+app.use(express.static(path.join(__dirname, "public")));
+
+/* ===== ROUTES ===== */
+app.use("/users", require("./routes/userRoutes"));
+
+/* ===== TEST ===== */
+app.get("/", (req, res) => {
+  res.send("LocalEase Server Running 🚀");
+});
+
+/* ===== SERVER ===== */
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`✅ Server running on http://localhost:${PORT}`);
+>>>>>>> e6de81cf82702511476c6e5d140007ddf1cf3752
 });
