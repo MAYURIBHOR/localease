@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LocalEase – Home</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-logo">LocalEase</div>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/services">Services</a>
+    <a href="/contact">Contact</a>
+    <a href="/login">Login</a>
+    <a href="/register">Register</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>Welcome to LocalEase</h1>
+  <p>Your one-stop platform to find trusted local services easily.</p>
+
+  <div class="hero-features">
+    <div class="hero-feature">✔ Verified Professionals</div>
+    <div class="hero-feature">⚡ Fast Booking</div>
+    <div class="hero-feature">💰 Affordable Pricing</div>
+  </div>
+
+  <button class="cta-btn" onclick="window.location.href='/login'">
+    Book a Service
+  </button>
+</section>
+
+<section class="why-choose">
+  <div class="container">
+    <h2 class="section-title">Why Choose LocalEase?</h2>
+    <div class="features">
+      <div class="feature-card">
+        <h3>Verified Professionals</h3>
+        <div class="counter" data-target="500">0</div>
+        <p>All providers are background verified.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Quick Booking</h3>
+        <div class="counter" data-target="1200">0</div>
+        <p>Fast service at your doorstep.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Affordable Pricing</h3>
+        <div class="counter" data-target="98">0</div>
+        <p>Quality services at reasonable prices.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<h2 class="section-title">Our Services</h2>
+<div class="services">
+  <div class="card">
+    <div class="icon"><i class="fa-solid fa-wrench"></i></div>
+    <h3>Plumber <span class="verified">✔</span></h3>
+    <p>Fixing pipes, leakage and water issues.</p>
+    <button class="book-btn" onclick="location.href='/login'">Book Now</button>
+  </div>
+
+  <div class="card">
+    <div class="icon"><i class="fa-solid fa-bolt"></i></div>
+    <h3>Electrician <span class="verified">✔</span></h3>
+    <p>Electrical wiring and power issues.</p>
+    <button class="book-btn" onclick="location.href='/login'">Book Now</button>
+  </div>
+</div>
+
+<footer class="footer">
+  <h3>LocalEase</h3>
+  <p>© 2026 LocalEase. All rights reserved.</p>
+</footer>
+
+<script>
+// Animation for counters
+const counters = document.querySelectorAll('.counter');
+counters.forEach(counter => {
+  const updateCount = () => {
+    const target = +counter.getAttribute('data-target');
+    const count = +counter.innerText;
+    const increment = target / 100;
+    if (count < target) {
+      counter.innerText = Math.ceil(count + increment);
+      setTimeout(updateCount, 20);
+    } else {
+      counter.innerText = target + (target === 98 ? '%' : '+');
+    }
+  };
+  updateCount();
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Dashboard | LocalEase</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<!-- TOP NAVBAR -->
+<header class="topbar">
+  <div class="logo">LocalEase</div>
+  <nav>
+    <a class="active">Dashboard</a>
+    <a>My Requests</a>
+    <a>Profile</a>
+    <a class="logout">Logout</a>
+  </nav>
+</header>
+
+<!-- MAIN -->
+<main class="dashboard">
+
+  <!-- LEFT SECTION -->
+  <section class="main-area">
+
+    <!-- WELCOME -->
+    <div class="welcome">
+      <h1>Welcome back, <span>Anifayudh</span></h1>
+      <p>Manage your services and payments easily</p>
+    </div>
+
+    <!-- STATUS STRIP -->
+    <div class="status-strip">
+      <div>
+        <h3>12</h3>
+        <span>Total Requests</span>
+      </div>
+      <div>
+        <h3>4</h3>
+        <span>Active Services</span>
+      </div>
+      <div>
+        <h3>₹1,200</h3>
+        <span>Pending Payment</span>
+      </div>
+    </div>
+
+    <!-- ACTION GRID -->
+    <div class="action-grid">
+      <div class="action search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <h4>Search Services</h4>
+        <p>Find nearby professionals</p>
+      </div>
+
+      <div class="action contact">
+        <i class="fa-solid fa-phone"></i>
+        <h4>Direct Contact</h4>
+        <p>Call or chat instantly</p>
+      </div>
+
+      <div class="action wallet">
+        <i class="fa-solid fa-wallet"></i>
+        <h4>Payments & Wallet</h4>
+        <p>Manage transactions</p>
+      </div>
+
+      <div class="action saved">
+        <i class="fa-solid fa-bookmark"></i>
+        <h4>Saved Providers</h4>
+        <p>Your favourites</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- RIGHT PROFILE -->
+  <aside class="profile-panel">
+    <img src="https://i.pravatar.cc/150?img=12" alt="User">
+    <h3>Anifayudh</h3>
+    <span class="verified">
+      <i class="fa-solid fa-circle-check"></i> Verified
+    </span>
+    <button>View Profile</button>
+  </aside>
+
+</main>
+
+</body>
+</html>

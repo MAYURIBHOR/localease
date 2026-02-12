@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard | LocalEase</title>
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">LocalEase</div>
+  <div class="nav-links">
+    <a href="admin-dashboard.html">Dashboard</a>
+    <a href="login.html">Logout</a>
+  </div>
+</nav>
+
+<section class="dashboard">
+  <h1>Admin Dashboard</h1>
+  <p class="subtitle">Manage real-time providers & activity</p>
+
+  <div class="stats">
+    <div class="stat-card">
+      <i class="fas fa-users"></i>
+      <h3 id="total-count">0</h3>
+      <p>Providers Registered</p>
+    </div>
+  </div>
+
+  <div class="table-section">
+    <h2>Provider Verification</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="provider-list">
+        </tbody>
+    </table>
+  </div>
+</section>
+
+<script>
+  // LOAD DATA FROM BACKEND
+  async function fetchProviders() {
+    try {
+      const response = await fetch('http://localhost:5000/admin/providers');
+      const data = await response.json();
+      const list = document.getElementById('provider-list');
+      
+      list.innerHTML = ""; // Clear table
+      document.getElementById('total-count').innerText = data.length;
+
+      data.forEach(p => {
+        list.innerHTML += `
+          <tr>
+            <td>${p.name}</td>
+            <td>${p.email}</td>
+            <td><span class="status-${p.status}">${p.status}</span></td>
+            <td>
+              <button class="approve" onclick="approveMe(${p.id})">Approve</button>
+            </td>
+          </tr>
+        `;
+      });
+    } catch (err) {
+      console.error("Error loading table:", err);
+    }
+  }
+
+  // APPROVE PROVIDER ACTION
+  async function approveMe(id) {
+    const response = await fetch(`http://localhost:5000/admin/approve/${id}`, {
+      method: 'POST'
+    });
+    if(response.ok) {
+      alert("Success! Provider is now active.");
+      fetchProviders(); // Refresh list
+    }
+  }
+
+  // Run on page load
+  window.onload = fetchProviders;
+</script>
+
+</body>
+</html>
