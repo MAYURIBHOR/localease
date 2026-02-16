@@ -73,9 +73,10 @@ document.getElementById("registerForm").addEventListener("submit", async functio
   }
 
   /* ================= API CALL ================= */
+  
   try {
     // Using the full URL ensures it connects even if you open the file directly
-    const response = await fetch("http://localhost:5000/users/register", {
+    const response = await fetch("http://localhost:5000/api/users/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
