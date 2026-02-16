@@ -12,9 +12,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
-// MongoDB Cloud Connection
-mongoose.connect(process.env.MONGO_URI)
-    .then(() => console.log("✅ Connected to MongoDB Atlas Cloud!"))
+// MongoDB Cloud Connection (use fallback if environment variable missing)
+const mongoUri = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/LocalEase';
+mongoose.connect(mongoUri)
+    .then(() => console.log("✅ Connected to MongoDB!"))
     .catch(err => console.error("❌ MongoDB Connection Error:", err));
 
 /* ===== PAGE ROUTES ===== */
